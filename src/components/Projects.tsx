@@ -110,8 +110,8 @@ export function Projects() {
             <p className="mt-4 leading-relaxed text-fog">
               An extremely fast, fully rebuilt Discord client for all platforms. Includes{' '}
               <span className="text-bone">firebridge</span>, a fork of the <span className="text-bone">nyxx</span>{' '}
-              bot API forked to support user tokens. Full media system powered by media_kit. Full
-              custom implementations of many unqiue Discord features, such as overlapping panels,
+              bot API patched to support user tokens. Full media system powered by media_kit.
+              Custom implementations of many unique Discord features, such as overlapping panels,
               with much less overhead.
             </p>
 
@@ -156,14 +156,14 @@ export function Projects() {
           <div className="order-last h-fit self-center overflow-hidden rounded-2xl border border-white/5 md:order-first">
             <img
               src={flutterbirdPreview}
-              alt="FlutterBird browser preview"
+              alt="Flutterbird browser preview"
               className="aspect-[1400/855] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               loading="lazy"
             />
           </div>
 
           <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold text-bone md:text-3xl">FlutterBird</h3>
+            <h3 className="text-2xl font-semibold text-bone md:text-3xl">Flutterbird</h3>
             <p className="mt-1.5 font-mono text-sm text-ember-300/90">A browser engine, embedded in Flutter</p>
             <p className="mt-4 leading-relaxed text-fog">
               An experimental Flutter browser built on the{' '}
