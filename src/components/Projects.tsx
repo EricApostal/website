@@ -68,7 +68,7 @@ function ContributionCard({
         {icon}
       </div>
       <p className="flex-1 text-sm text-fog">
-        Also contributing to <span className="text-bone">{name}</span> — {description}
+        Also contributing to <span className="text-bone">{name}</span> - {description}
       </p>
       <div className="flex items-center gap-1.5 font-mono text-xs text-ember-300/90">
         <StarIcon className="h-3.5 w-3.5" /> {stars}
