@@ -7,7 +7,7 @@ export function Footer() {
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.35em] text-ember-300/80">Contact</p>
         <h2 className="mt-5 text-3xl font-semibold text-balance md:text-4xl">
-          Building something fast?{' '}
+          Building something amazing?{' '}
           <span className="text-gradient-ember">Hit me up.</span>
         </h2>
 

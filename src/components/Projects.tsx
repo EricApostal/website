@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react'
 import bonfireHero from '../assets/img/bonfire-hero.webp'
 import flutterbirdPreview from '../assets/img/flutterbird-preview.webp'
 import { Reveal } from './Reveal'
-import { ExternalLinkIcon, GithubIcon, StarIcon } from './icons'
+import { ExternalLinkIcon, FlutterIcon, GithubIcon, StarIcon } from './icons'
 import {
   bonfirePlatforms,
   bonfireStack,
@@ -43,6 +44,39 @@ function StackChips({ stack }: { stack: string[] }) {
   )
 }
 
+function ContributionCard({
+  href,
+  icon,
+  name,
+  description,
+  stars,
+}: {
+  href: string
+  icon: ReactNode
+  name: string
+  description: string
+  stars: string
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/[0.06] px-6 py-5 transition-colors hover:border-ember-500/25"
+    >
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.03]">
+        {icon}
+      </div>
+      <p className="flex-1 text-sm text-fog">
+        Also contributing to <span className="text-bone">{name}</span> — {description}
+      </p>
+      <div className="flex items-center gap-1.5 font-mono text-xs text-ember-300/90">
+        <StarIcon className="h-3.5 w-3.5" /> {stars}
+      </div>
+    </a>
+  )
+}
+
 export function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-32 md:px-10">
@@ -51,6 +85,9 @@ export function Projects() {
         <h2 className="mt-4 text-3xl font-semibold text-balance md:text-4xl">
           Some of my recent projects
         </h2>
+        <p className="mt-3 text-fog">
+          A non-exhaustive list of my recent projects and contributions.
+        </p>
       </Reveal>
 
       {/* Bonfire */}
@@ -153,24 +190,22 @@ export function Projects() {
         </article>
       </Reveal>
 
-      {/* media-kit mention */}
-      <Reveal delay={0.1} className="mt-8">
-        <a
+
+      <Reveal delay={0.1} className="mt-8 space-y-4">
+        <ContributionCard
           href="https://github.com/media-kit/media-kit"
-          target="_blank"
-          rel="noreferrer"
-          className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/[0.06] px-6 py-5 transition-colors hover:border-ember-500/25"
-        >
-          <div>
-            <p className="text-sm text-fog">
-              Also contributing to <span className="text-bone">media-kit</span> — the cross-platform
-              video &amp; audio engine powering playback across the Flutter ecosystem.
-            </p>
-          </div>
-          <div className="flex items-center gap-1.5 font-mono text-xs text-ember-300/90">
-            <StarIcon className="h-3.5 w-3.5" /> 1.8k+
-          </div>
-        </a>
+          icon={<GithubIcon className="h-5 w-5 text-bone/80" />}
+          name="media-kit"
+          description="the cross-platform video & audio engine powering playback across the Flutter ecosystem."
+          stars="1.8k+"
+        />
+        <ContributionCard
+          href="https://github.com/flutter/flutter"
+          icon={<FlutterIcon className="h-5 w-5" />}
+          name="flutter"
+          description="Google's UI toolkit for building natively compiled apps from a single codebase."
+          stars="170k+"
+        />
       </Reveal>
     </section>
   )

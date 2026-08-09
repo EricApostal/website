@@ -89,3 +89,14 @@ export function ArrowLeftIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+
+export function FlutterIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className}>
+      <path fill="#47C5FB" d="M14.314 0 2.3 12 6 15.7 21.684.013h-7.357z" />
+      <path fill="#00569E" d="M14.328 11.072 7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" />
+      <path fill="#00B5F8" d="m7.857 17.529 3.828 3.83 6.47-3.83H14.33z" />
+    </svg>
+  )
+}
