@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  --color-void: #08070a;
+  --color-char: #0f0d10;
+  --color-ash: #1a1619;
+  --color-smoke: #6f6a6f;
+  --color-fog: #a8a3a8;
+  --color-bone: #f2ede8;
+
+  --color-ember-100: #ffe7c2;
+  --color-ember-300: #ffb627;
+  --color-ember-500: #ff6b35;
+  --color-ember-700: #d6401a;
+  --color-ember-900: #6b1a0a;
+
+  --color-coal-blue: #3a4a5c;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-void);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-ember-500);
+  color: var(--color-void);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ash);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ember-700);
+}
+
+.text-gradient-ember {
+  background: linear-gradient(120deg, var(--color-ember-100), var(--color-ember-300) 45%, var(--color-ember-500) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
